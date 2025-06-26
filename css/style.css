@@ -1,0 +1,566 @@
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+    --fog-of-war-color: #14223c;
+    --bright-yellow-color: #FFD600;
+    --light-gray-color: #E0E0E0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, sans-serif;
+    color: var(--fog-of-war-color);
+    min-height: 100vh;
+}
+
+body.auth-page {
+    background-position: bottom center;
+    background-size: auto;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+form {
+  width: 100%;
+  max-width: 400px;
+}
+
+h1,
+span {
+  color: var(--fog-of-war-color);
+}
+
+a {
+  color: var(--light-gray-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--bright-yellow-color);
+}
+
+.form-control,
+.form-select {
+  padding-right: 3rem;
+}
+
+.form-control::placeholder {
+  color: var(--light-gray-color);
+}
+
+.form-control,
+.form-select {
+  padding-right: 3rem;
+  padding-left: 1rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid #ccc;
+  color: var(--light-gray-color);
+  font-size: 16px;
+}
+
+.form-control::placeholder {
+  color: var(--light-gray-color);
+}
+
+.form-select,
+.form-select option {
+  background-color: rgba(20, 34, 60, 0.95);
+  color: rgba(224, 224, 224, 0.7) !important;
+}
+
+.custom-no-arrow,
+.form-select {
+  background-image: none !important;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.password_fill {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.btn.btn-warning {
+  background-color: var(--fog-of-war-color);
+  color: var(--bright-yellow-color);
+  border: none;
+}
+
+.btn.btn-warning:hover {
+  background-color: #1f3053;
+  color: var(--bright-yellow-color);
+}
+
+.translucent-form {
+  background: rgba(20, 34, 60, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 0 2rem;
+  width: 100%;
+  max-width: 540px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.translucent-form h1,
+.translucent-form span {
+  color: var(--bright-yellow-color);
+  font-weight: bold;
+}
+
+.translucent-form input.form-control,
+.translucent-form select.form-select,
+.translucent-form textarea.form-control {
+  background: transparent !important;
+  color: var(--light-gray-color) !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(224, 224, 224, 0.5) !important;
+  border-radius: 0 !important;
+  z-index: 1;
+  position: relative;
+  opacity: 1 !important;
+  padding-left: 0.5rem;
+  padding-right: 2.2rem;
+}
+
+.translucent-form .form-control::placeholder {
+  color: var(--light-gray-color);
+}
+
+.form_icon,
+.custom-select-icon,
+.eye-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 1.1rem;
+  color: var(--light-gray-color);
+  z-index: 2;
+}
+.form_icon{
+    pointer-events: all;
+    cursor: auto;
+}
+.eye-icon {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.password_fill {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.btn.btn-warning {
+  background-color: var(--bright-yellow-color);
+  color: var(--dark-blue-color);
+  border: none;
+  font-weight: bold;
+}
+
+.btn.btn-warning:hover {
+  background-color: #e0c200;
+  color: var(--dark-blue-color);
+}
+
+.translucent-form a {
+  color: var(--bright-yellow-color) !important;
+  text-decoration: none;
+}
+
+.translucent-form a:hover {
+  text-decoration: underline;
+}
+
+.translucent-form .final-line p {
+  color: var(--light-gray-color);
+  padding-bottom: 1rem;
+}
+
+
+.my-custom-button {
+  background-color: var(--bright-yellow-color) !important;
+  color: var(--fog-of-war-color) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2) !important;
+  transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+  border: none !important;
+}
+.my-custom-button:hover,
+.my-custom-button:focus {
+  background-color: color-mix(in srgb, var(--bright-yellow-color), black 10%) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+}
+.my-custom-button:active {
+  background-color: color-mix(in srgb, var(--bright-yellow-color), black 20%) !important;
+  border-color: color-mix(in srgb, var(--bright-yellow-color), black 20%) !important;
+  color: var(--fog-of-war-color) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) inset !important;
+  transform: translateY(1px) !important;
+}
+
+.btn-warning {
+    background-color: var(--bright-yellow-color) !important;
+    color: var(--fog-of-war-color) !important;
+    border-color: var(--bright-yellow-color) !important;
+}
+.btn-warning:hover, .btn-warning:focus, .btn-warning:active {
+    background-color: color-mix(in srgb, var(--bright-yellow-color), black 10%) !important;
+    border-color: color-mix(in srgb, var(--bright-yellow-color), black 10%) !important;
+    color: var(--fog-of-war-color) !important;
+}
+.btn-primary {
+    background-color: var(--fog-of-war-color) !important;
+    color: var(--light-gray-color) !important;
+    border-color: var(--fog-of-war-color) !important;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background-color: color-mix(in srgb, var(--fog-of-war-color), white 20%) !important;
+    border-color: color-mix(in srgb, var(--fog-of-war-color), white 20%) !important;
+    color: var(--light-gray-color) !important;
+}
+.btn-outline-primary {
+    border-color: var(--fog-of-war-color) !important;
+    color: var(--fog-of-war-color) !important;
+}
+.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active {
+    background-color: var(--fog-of-war-color) !important;
+    color: var(--light-gray-color) !important;
+}
+.btn-danger {
+    background-color: var(--bright-yellow-color) !important;
+    color: var(--fog-of-war-color) !important;
+    border-color: var(--bright-yellow-color) !important;
+}
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active {
+    background-color: color-mix(in srgb, var(--bright-yellow-color), black 10%) !important;
+    border-color: color-mix(in srgb, var(--bright-yellow-color), black 10%) !important;
+    color: var(--fog-of-war-color) !important;
+}
+.btn-outline-info {
+    border-color: var(--fog-of-war-color) !important;
+    color: var(--fog-of-war-color) !important;
+}
+.btn-outline-info:hover, .btn-outline-info:focus, .btn-outline-info:active {
+    background-color: var(--fog-of-war-color) !important;
+    color: var(--light-gray-color) !important;
+}
+
+
+.main-header {
+  background-color: var(--fog-of-war-color);
+  padding: 0.4rem 0;
+  width: 100%;
+}
+.main-header .navbar-brand img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.user-icon {
+  font-size: 1.8em !important;
+  color: var(--light-gray-color) !important;
+  background: none !important;
+  border: none !important;
+}
+
+
+.header-nav {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1029;
+    backdrop-filter: blur(25px);
+}
+.header-nav nav.navbar {
+  background-color: var(--neutral-backdrop-color);
+  color: var(--fog-of-war-color);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  padding: 0.5rem 0;
+}
+.header-nav .navbar-nav {
+    justify-content: center !important;
+}
+.header-nav .nav-item {
+    list-style: none;
+}
+.header-nav a.nav-link {
+  position: relative;
+  display: inline-block;
+  color: var(--bright-yellow-color) !important;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+.header-nav a.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  width: 100%;
+  height: 3px;
+  background: var(--bright-yellow-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+.header-nav a.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+
+section {
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1028;
+}
+section:first-of-type {
+    margin-top: 140px;
+}
+section h2 {
+    color: var(--fog-of-war-color);
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+section#home {
+  background-color: var(--neutral-backdrop-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: calc(100vh - 140px);
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0;
+}
+section#home .service-main-content .service-title {
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--fog-of-war-color);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+@media (max-width: 768px) {
+  section#home .service-main-content .service-title {
+    font-size: 36px;
+  }
+}
+@media (max-width: 575px) {
+  section#home .service-main-content .service-title {
+    font-size: 28px;
+  }
+}
+
+section#home .service-main-content .service-title .typed {
+  color: var(--fog-of-war-color);
+  display: inline-block;
+  white-space: nowrap;
+  line-height: 1.2;
+  position: relative;
+}
+section#home .service-main-content .service-title .typed::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 3px;
+  background: var(--fog-of-war-color);
+  border-radius: 2px;
+  animation: none;
+  margin-left: 0;
+  color: unset;
+}
+
+
+@media (max-width: 768px) {
+  section#home .service-main-content .service-title .typed {
+    min-width: 450px;
+  }
+}
+@media (max-width: 575px) {
+  section#home .service-main-content .service-title .typed {
+    min-width: 350px; 
+  }
+}
+
+.typed-cursor {
+  display: inline-block;
+  animation: blinkCursor 0.75s step-end infinite;
+  color: var(--fog-of-war-color);
+  margin-left: 5px;
+}
+
+@keyframes blinkCursor {
+    from, to { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+
+
+
+section#about {
+    background-color: var(--neutral-backdrop-color);
+}
+section#about .card {
+    border-color: var(--fog-of-war-color) !important;
+}
+section#about .progress-bar {
+    background-color: var(--bright-yellow-color) !important;
+}
+section#about .btn-danger {
+    background-color: var(--fog-of-war-color) !important;
+    border-color: var(--fog-of-war-color) !important;
+    color: var(--light-gray-color) !important;
+}
+section#about .text-danger {
+    color: var(--bright-yellow-color) !important;
+}
+section#about i.fa-regular.fa-thumbs-up {
+    color: var(--bright-yellow-color);
+}
+
+
+section#services {
+    background-color: var(--fog-of-war-color);
+    color: var(--light-gray-color);
+}
+section#services h2 {
+    color: var(--light-gray-color);
+}
+section#services .card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--light-gray-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+section#services .card h5 {
+    color: var(--bright-yellow-color);
+}
+section#services .card p {
+    color: var(--light-gray-color);
+}
+section#services .card img {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(240deg) brightness(100%) contrast(100%);
+}
+section#services .text-danger {
+    color: var(--bright-yellow-color) !important;
+}
+
+
+section#experience {
+    background-color: var(--neutral-backdrop-color);
+}
+section#experience .card {
+    background-color: #ffffff;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+section#experience .text-danger {
+    color: var(--bright-yellow-color) !important;
+}
+section#experience .vr {
+    background-color: var(--bright-yellow-color);
+}
+section#experience .opacity-75 {
+    color: var(--fog-of-war-color);
+    opacity: 0.75;
+}
+
+
+section#price_plan {
+    background-color: var(--fog-of-war-color);
+    color: var(--light-gray-color);
+}
+section#price_plan h2 {
+    color: var(--light-gray-color);
+}
+section#price_plan .card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--light-gray-color);
+    height: fit-content;
+    width: 25%;
+    margin: 0 10px;
+}
+section#price_plan .card img {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(240deg) brightness(100%) contrast(100%);
+}
+section#price_plan .card h5 {
+    color: var(--bright-yellow-color);
+}
+section#price_plan .card p {
+    color: var(--light-gray-color);
+}
+section#price_plan .card h1 {
+    color: var(--bright-yellow-color);
+}
+section#price_plan .btn {
+    background-color: var(--bright-yellow-color) !important;
+    border-color: var(--bright-yellow-color) !important;
+    color: var(--fog-of-war-color) !important;
+}
+section#price_plan .btn:hover {
+    background-color: color-mix(in srgb, var(--bright-yellow-color), black 10%) !important;
+    border-color: color-mix(in srgb, var(--bright-yellow-color), black 10%) !important;
+}
+
+
+section#contact {
+    background-color: var(--neutral-backdrop-color);
+}
+section#contact h2 {
+    color: var(--fog-of-war-color);
+}
+section#contact h3 {
+    color: var(--fog-of-war-color);
+}
+section#contact span {
+    color: var(--fog-of-war-color);
+}
+section#contact .text-danger {
+    color: var(--bright-yellow-color) !important;
+}
+section#contact form label {
+    color: var(--fog-of-war-color);
+}
+section#contact input.form-control,
+section#contact textarea.form-control {
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    border: 1px solid rgba(0,0,0,0.2) !important;
+    color: var(--fog-of-war-color) !important;
+}
+section#contact input.form-control::placeholder,
+section#contact textarea.form-control::placeholder {
+    color: rgba(20, 34, 60, 0.6) !important;
+}
+section#contact .btn {
+    background-color: var(--bright-yellow-color) !important;
+    border-color: var(--bright-yellow-color) !important;
+    color: var(--fog-of-war-color) !important;
+}
+section#contact .btn:hover {
+    background-color: color-mix(in srgb, var(--bright-yellow-color), black 10%) !important;
+    border-color: color-mix(in srgb, var(--bright-yellow-color), black 10%) !important;
+}
+
+footer {
+    background-color: var(--fog-of-war-color);
+    color: var(--light-gray-color);
+    padding: 1.5rem;
+    width: 100%;
+}

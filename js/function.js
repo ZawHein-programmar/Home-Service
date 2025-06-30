@@ -72,7 +72,47 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const myCarouselElement = document.querySelector('#carouselCaptions')
 
-        const carousel = new bootstrap.Carousel(myCarouselElement, {
-           interval: 2000,
-           touch: false
-          })
+const carousel = new bootstrap.Carousel(myCarouselElement, {
+    interval: 2000,
+    touch: false
+    })
+
+
+document.addEventListener('DOMContentLoaded', () => {
+const body = document.body;
+const headerNav = document.querySelector('.header-nav');
+
+const getScrollbarWidth = () => {
+    const scrollDiv = document.createElement('div');
+    scrollDiv.style.width = '100px';
+    scrollDiv.style.height = '100px';
+    scrollDiv.style.overflow = 'scroll';
+    scrollDiv.style.position = 'absolute';
+    scrollDiv.style.top = '-9999px';
+    body.appendChild(scrollDiv);
+    const scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
+    body.removeChild(scrollDiv);
+    return scrollbarWidth;
+};
+
+// Before a modal is shown
+document.addEventListener('show.bs.modal', () => {
+    if (window.innerWidth > body.clientWidth) {
+    const scrollbarWidth = getScrollbarWidth();
+    const scrollbarWidthPx = `${scrollbarWidth}px`;
+
+    body.style.paddingRight = scrollbarWidthPx;
+    if (headerNav) {
+        headerNav.style.paddingRight = scrollbarWidthPx;
+    }
+    }
+});
+
+// When a modal is hidden
+document.addEventListener('hidden.bs.modal', () => {
+    body.style.paddingRight = '0px';
+    if (headerNav) {
+    headerNav.style.paddingRight = '0px';
+    }
+});
+});
